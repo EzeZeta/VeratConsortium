@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+        <link rel="Stylesheet" href="css/style.css">
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css"/>
         <link rel="stylesheet" href="css/bootstrap-reboot.css" type="text/css">
-        <link rel="Stylesheet" href="css/style.css">
+        
 
         
 
