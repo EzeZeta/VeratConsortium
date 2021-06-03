@@ -44,7 +44,7 @@
 
                     <tr><th>Importe</th><th>Fecha</th><th>Vencimiento</th><th>Recargo</th><th>Expensa</th></tr>
                             <c:forEach var="lista" items="${lista}" >
-                        <tr><td><input type="checkbox" class="check" name="cbxExpensas" id="cbxId" value="${lista.importeExpensa}"> AR$${lista.importeExpensa}</td>
+                        <tr><td><input type="checkbox" class="check" name="cbxExpensas" id="cbxId" value="${lista.importeExpensa} ${lista.id_expensa}"> AR$${lista.importeExpensa}</td>
                             <td>${lista.fecha}</td><td>${lista.vencimiento}</td>
                             <td><input type="checkbox" class="check" name="cbxRecargo" id="idRecargo" value="300" > AR$300</td>
                             <td><input name="txtId" id="id_expensa" value="${lista.id_expensa}" disabled></td></tr>
@@ -70,7 +70,7 @@
                 <%!
                     int id_ph;
                     int id_consorcio;
-                                                                            %>
+                                                                                                %>
                 <%
                     id_ph = Integer.parseInt(request.getParameter("id_ph"));
                     id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
@@ -145,14 +145,13 @@
         }
 
         function guardarIdExp() {
-            
-            var expensas = Array.from(document.querySelectorAll("input[type=checkbox][name=cbxExpensas]:checked")).map(e => e.value);
-            let idExp = [];
-            for (var i = 0; i < expensas.length; i++) {
-                idExp.push(expensas[i].txtId);
-            }
-            
-            document.getElementById("id_expensa1").value = idExp ;
+            let idExpensas = Array
+                .from(document.querySelectorAll("input[type=checkbox][name=cbxExpensas]:checked"))
+                .map(e => e.value.split(" ")[1]); // extraigo el id del value
+            const stringIds = idExpensas.join(" ")
+       
+                
+            document.getElementById("id_expensa1").value = stringIds;
             return false;
         }
 

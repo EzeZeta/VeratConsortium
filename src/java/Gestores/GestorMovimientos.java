@@ -407,5 +407,24 @@ public class GestorMovimientos {
     
     
     
+    public void cambiarEstExpensa(int id_expensa) {
+
+        try {
+            Connection conn = DriverManager.getConnection(CONN, USER, PASS);
+            PreparedStatement st = conn.prepareStatement("update Expensas set estado = 1 where id_expensa = ?");
+            st.setInt(1, id_expensa );
+            
+
+            st.executeUpdate();
+            st.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(GestorMovimientos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
     
 }

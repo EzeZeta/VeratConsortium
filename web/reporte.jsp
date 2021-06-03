@@ -60,7 +60,7 @@
 
 
             <div class="container col-6" style="float: right"> 
-                <h1 class="container-md ">Inquilinos morosos</h1>
+                <h1 class="container-md ">Top 5 Inquilinos morosos</h1>
                 <table class="table table-striped">
                     <tr>
                         <th>Consorcio</th>
@@ -80,6 +80,9 @@
                     </c:forEach>
                 </table>            
             </div>
+            <br>
+            
+            
 
 
             <div class="container-sm " style="float: left">
@@ -87,6 +90,27 @@
                 <a class=" btn btn-dark" href="vistaAdmin.jsp">Volver</a>
             </div>
         </div>
+        <div class="container container-fluid"> 
+                <h1 class="container-md ">Top 5 Inquilinos morosos</h1>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Consorcio</th>
+                        <th>Ph</th>
+                        <th>Propietario</th>
+                        <th>Cant. Exp. Adeudadas</th>
+                        <th>Importe adeudado</th>            
+                    </tr>
+                    <c:forEach var="pro" items="${moro.topMorososGral}" > 
+                        <tr style="text-align: center">
+                            <td style="text-align: left">${pro.nombreConsorcio}</td>
+                            <td>${pro.descripcion}</td>
+                            <td style="text-align: left">${pro.propietario}</td>
+                            <td>${pro.cantidadExp}</td>
+                            <td style="text-align: right">AR$ ${pro.importeAdeudado}</td>
+                        </tr>
+                    </c:forEach>
+                </table>            
+            </div>
     </body>
     
     
