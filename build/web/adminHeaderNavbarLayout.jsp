@@ -26,6 +26,10 @@
   <body style="background-image: url(img/fondo.jpg)  " >      
       <div class="navbar, text-md-right">
           <ul class="nav justify-content-end">
+              
+              <li class="nav-item">
+                    <a class="nav-link" href="index.html" style="color: grey">Home</a>
+                </li>
                                                                        
             <li class="nav-item">
               <a class="nav-link" href="LoginServlet" style="color: grey">Administracion</a>

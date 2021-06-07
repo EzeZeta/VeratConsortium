@@ -16,9 +16,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -85,6 +87,15 @@ public class cargarIngresoServlet extends HttpServlet {
         GestorMovimientos gm = new GestorMovimientos();
 
         gm.agregarIngreso(nuevoMovimiento);
+        
+        String idCons = String.valueOf(id_consorcio);
+        
+        request.setAttribute("id_consorcio", idCons);
+        
+        
+        
+        RequestDispatcher rc = request.getServletContext().getRequestDispatcher("/detalleMovimientosServlet2");
+        rc.forward(request, response);
 
     }
 

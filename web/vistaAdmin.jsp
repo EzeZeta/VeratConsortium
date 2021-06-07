@@ -24,7 +24,7 @@
         <body>
 
             <div class="container-fluid"> 
-                <h1 class="container-fluid" >Bienvenido a tu perfil</h1>
+                <h1 class="container-fluid" >Bienvenido a tu perfil </h1>
                 <h3 class="container-fluid">           
                     <small class="text-muted">Administracion de datos.</small>
                 </h3>

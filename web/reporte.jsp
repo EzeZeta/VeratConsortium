@@ -41,26 +41,25 @@
 
         <jsp:useBean id="conso" scope="request" class="Gestores.GestorExpensas"/>
         <jsp:useBean id="moro" scope="request" class="Gestores.GestorReportes"/>
+        <jsp:useBean id="con" scope="request" class="Gestores.GestorConsorcios"/>
     </head>
     <body>
 
 
 
         <div class="container-fluid">
-
             <div class="container col-6" style = "float: left">
-                <h1 class="container-md ">Indicadores generales</h1>
+                <h2 class="container-md ">Indicadores generales</h2>
                 <table > 
                     <tr>
                         <td style="text-align: center "><canvas  id="myC" width="300" height="300"></canvas>Expensas Cobradas / Adeudadas</td>
                         <td style="text-align: center "><canvas  id="prueba" width="300" height="300"></canvas>Ingresos / Gastos</td>
                     </tr>
                 </table>
-            </div>
-
+            </div>    
 
             <div class="container col-6" style="float: right"> 
-                <h1 class="container-md ">Top 5 Inquilinos morosos</h1>
+                <h2 class="container-md ">Top 5 Inquilinos morosos</h2>
                 <table class="table table-striped">
                     <tr>
                         <th>Consorcio</th>
@@ -80,44 +79,44 @@
                     </c:forEach>
                 </table>            
             </div>
-            <br>
-            
-            
+        </div>
+
+        <br>
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="col-6"> 
+                    <h2 class="container-md ">Reportes por Consorcio</h2>
+                    <table>
+
+                        <c:forEach var="pro" items="${con.listadoConsorcios()}" > 
+
+                            <td style="text-align: center" hidden>${pro.id_consorcio}</td>
+                            <td>
+                                <button class="btn btn-outline-dark" onclick="window.location = 'reporteIndividualServlet?id_consorcio=${pro.id_consorcio }';" > ${pro.nombre} <img src="img/condo.png" height="35" width="35"></button>  
+                            </td>                            
+                        </c:forEach>
+                    </table>            
+                </div>
+
+            </div>
 
 
             <div class="container-sm " style="float: left">
                 <br><br>
                 <a class=" btn btn-dark" href="vistaAdmin.jsp">Volver</a>
             </div>
+
+
         </div>
-        <div class="container container-fluid"> 
-                <h1 class="container-md ">Top 5 Inquilinos morosos</h1>
-                <table class="table table-striped">
-                    <tr>
-                        <th>Consorcio</th>
-                        <th>Ph</th>
-                        <th>Propietario</th>
-                        <th>Cant. Exp. Adeudadas</th>
-                        <th>Importe adeudado</th>            
-                    </tr>
-                    <c:forEach var="pro" items="${moro.topMorososGral}" > 
-                        <tr style="text-align: center">
-                            <td style="text-align: left">${pro.nombreConsorcio}</td>
-                            <td>${pro.descripcion}</td>
-                            <td style="text-align: left">${pro.propietario}</td>
-                            <td>${pro.cantidadExp}</td>
-                            <td style="text-align: right">AR$ ${pro.importeAdeudado}</td>
-                        </tr>
-                    </c:forEach>
-                </table>            
-            </div>
+
+
+
+
+
     </body>
-    
-    
-    
-    
-    
-    
+
+
+
 
     <script>
         var ctx = document.getElementById("prueba").getContext("2d");
@@ -135,7 +134,6 @@
                 maintainAspectRatio: true
             }
         });
-
     </script>
 
     <script>
@@ -151,12 +149,11 @@
                             'rgb(241, 148, 138)', 'rgb(133, 193, 233 )'
 
                         ],
-
                         borderWidth: 3
                     }]
             },
             options: {
-            responsive: false,
+                responsive: false,
                 maintainAspectRatio: true
             }
         });

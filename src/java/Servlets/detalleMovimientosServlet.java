@@ -31,15 +31,7 @@ import sun.util.calendar.Gregorian;
 @WebServlet(name = "detalleMovimientosServlet", urlPatterns = {"/detalleMovimientosServlet"})
 public class detalleMovimientosServlet extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -67,8 +59,9 @@ public class detalleMovimientosServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int id_consorcio1 = Integer.parseInt(request.getParameter("txtId"));
+//        int id_consorcio1 = Integer.parseInt(request.getParameter("txtId"));
         String id_consorcio = request.getParameter("txtId");
+        
         String nombreConsorcio = request.getParameter("nombreConsorcio");
         String fechaD = request.getParameter("fechaDesde");
         String fechaH = request.getParameter("fechaHasta");
@@ -76,16 +69,15 @@ public class detalleMovimientosServlet extends HttpServlet {
                  
         GestorMovimientos gm = new GestorMovimientos();
         
-        ArrayList<dtoObtenerMovimientos> lista = gm.listadoMovFiltro(id_consorcio1, fechaD, fechaH);
-        
+        ArrayList<dtoObtenerMovimientos> lista = gm.listadoMovFiltro( Integer.parseInt(id_consorcio), fechaD, fechaH);     
        
         
          
         
 
-        double saldoInicial = gm.getSaldoInicial(id_consorcio1);
-        double ingresos = gm.getIngresos(id_consorcio1);
-        double gastos = gm.getGastos(id_consorcio1);
+        double saldoInicial = gm.getSaldoInicial(Integer.parseInt(id_consorcio));
+        double ingresos = gm.getSaldoInicial(Integer.parseInt(id_consorcio));
+        double gastos =gm.getSaldoInicial(Integer.parseInt(id_consorcio));
 
         double saldoCaja = 0;
         
@@ -95,9 +87,10 @@ public class detalleMovimientosServlet extends HttpServlet {
         request.setAttribute("id_consorcio", id_consorcio);
         request.setAttribute("nombreConsorcio", nombreConsorcio);
         request.setAttribute("lista", lista);        
-        request.setAttribute("saldoCaja", saldoCaja);
-
         
+        
+        
+       
 
         RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/detalleMovimientos.jsp");
         rd.forward(request, response);
