@@ -31,16 +31,10 @@
         <title >Verat Consortium</title>
     </head>
     <body >
-        <%! String id_consorcio;            
-            String nombreConsorcio;%>
-
-
-            <%  id_consorcio = request.getParameter("id_consorcio");
-            nombreConsorcio = request.getParameter("nombreConsorcio");
-        %>
         
         
-        <h1 class="container-md">Detalle movimientos <%=nombreConsorcio%>  </h1><br>
+        
+        <h1 class="container-md">Detalle movimientos ${nombreConsorcio}  </h1><br>
         
         
         <div class="container-md">
@@ -49,8 +43,8 @@
                     <tr><td>Desde</td><td><input type="date" name="fechaDesde"></td> 
                         <td>Hasta</td><td><input type="date" name="fechaHasta"></td>
                         
-                        <td><input type="text" name="txtId" value="<%=id_consorcio%>"  /></td>
-                        <td><input type="text" name="nombreConsorcio" value="<%=nombreConsorcio%>" hidden /></td>
+                        <td><input type="text" name="txtId" value="${id_consorcio}" hidden /></td>
+                        <td><input type="text" name="nombreConsorcio" value="${nombreConsorcio}" hidden /></td>
                         <td><input class="btn btn-outline-dark" type="submit" value="Filtrar"> </td>
 
                     </tr>

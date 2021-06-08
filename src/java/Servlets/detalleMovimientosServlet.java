@@ -37,6 +37,7 @@ public class detalleMovimientosServlet extends HttpServlet {
             throws ServletException, IOException {
 
         int id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
+        String nombreConsorcio = request.getParameter("nombreConsorcio");
 
         GestorMovimientos gm = new GestorMovimientos();
         ArrayList<DTOS.dtoObtenerMovimientos> lista = gm.listadoMovimientos(id_consorcio);
@@ -49,6 +50,8 @@ public class detalleMovimientosServlet extends HttpServlet {
         double saldoCaja = 0;
         saldoCaja = (saldoInicial + ingresos) - gastos;
         request.setAttribute("saldoCaja", saldoCaja);
+        request.setAttribute("nombreConsorcio", nombreConsorcio);
+        request.setAttribute("id_consorcio", id_consorcio);
 
         RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/detalleMovimientos.jsp");
         rd.forward(request, response);
@@ -59,34 +62,52 @@ public class detalleMovimientosServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-//        int id_consorcio1 = Integer.parseInt(request.getParameter("txtId"));
-        String id_consorcio = request.getParameter("txtId");
-        
+        int id_consorcio = Integer.parseInt(request.getParameter("txtId"));              
         String nombreConsorcio = request.getParameter("nombreConsorcio");
         String fechaD = request.getParameter("fechaDesde");
         String fechaH = request.getParameter("fechaHasta");
         
                  
-        GestorMovimientos gm = new GestorMovimientos();
+        if (fechaD == null) {
+            GestorMovimientos gm = new GestorMovimientos();
+        ArrayList<DTOS.dtoObtenerMovimientos> lista = gm.listadoMovimientos(id_consorcio);
+        request.setAttribute("lista", lista);
+
+        double saldoInicial = gm.getSaldoInicial(id_consorcio);
+        double ingresos = gm.getIngresos(id_consorcio);
+        double gastos = gm.getGastos(id_consorcio);
+
+        double saldoCaja = 0;
+        saldoCaja = (saldoInicial + ingresos) - gastos;
+        request.setAttribute("saldoCaja", saldoCaja);
+        request.setAttribute("nombreConsorcio", nombreConsorcio);
+        request.setAttribute("id_consorcio", id_consorcio);
+
+        RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/detalleMovimientos.jsp");
+        rd.forward(request, response);   
+            
+        }
+        else{
+            GestorMovimientos gm = new GestorMovimientos();
         
-        ArrayList<dtoObtenerMovimientos> lista = gm.listadoMovFiltro( Integer.parseInt(id_consorcio), fechaD, fechaH);     
-       
+         
+        ArrayList<dtoObtenerMovimientos> lista = gm.listadoMovFiltro(id_consorcio, fechaD, fechaH);
+        request.setAttribute("lista", lista);
         
          
         
 
-        double saldoInicial = gm.getSaldoInicial(Integer.parseInt(id_consorcio));
-        double ingresos = gm.getSaldoInicial(Integer.parseInt(id_consorcio));
-        double gastos =gm.getSaldoInicial(Integer.parseInt(id_consorcio));
+        double saldoInicial = gm.getSaldoInicial(id_consorcio);
+        double ingresos = gm.getIngresos(id_consorcio);
+        double gastos = gm.getGastos(id_consorcio);
 
         double saldoCaja = 0;
-        
         saldoCaja = (saldoInicial + ingresos) - gastos;
-        
         request.setAttribute("saldoCaja", saldoCaja);
-        request.setAttribute("id_consorcio", id_consorcio);
         request.setAttribute("nombreConsorcio", nombreConsorcio);
-        request.setAttribute("lista", lista);        
+        request.setAttribute("id_consorcio", id_consorcio);
+        
+               
         
         
         
@@ -94,6 +115,21 @@ public class detalleMovimientosServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/detalleMovimientos.jsp");
         rd.forward(request, response);
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     }
 

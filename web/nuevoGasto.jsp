@@ -32,7 +32,8 @@
                             id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
                         %>
 
-                        <tr><td>Consorcio </td><td><input type="text" name="txtConsorcio" value="<%=nombreConsorcio%>" disabled></td><input type="text" name="txtIdConsorcio" value="<%=id_consorcio%>" hidden ></td></tr>
+                        <tr><td>Consorcio </td><td><input type="text" name="txtConsorcio" value="<%=nombreConsorcio%>" disabled>
+                            </td><input type="text" name="txtId" value="<%=id_consorcio%>" hidden ></td></tr>
                         <tr><td>Fecha</td><td><input type="date" name="fecha"></td></tr>
                         <tr><td> Tipo Gasto</td><td>
                                 <select name="cboTipoGasto">

@@ -37,7 +37,7 @@
                 <button class="btn btn-outline-dark" onclick="window.location = 'listaDptosIngresosServlet?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Nuevo Ingreso</button>
                 <button class="btn btn-outline-dark" onclick="window.location = 'nuevoGasto.jsp?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Nuevo Gasto</button>
                 <button class="btn btn-outline-dark" onclick="window.location = 'detalleMovimientosServlet?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Detalle Movimientos</button>
-                <button class="btn btn-outline-dark" onclick="window.location = 'detalleMovimientosServlet?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Cierre de Mes</button>
+                
 
                 
 

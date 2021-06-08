@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/impresionExpensa.jsp</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/reporteConso.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/src/java/Gestores/GestorReportes.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/nuevoMovimiento2.jsp</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/detalleMovimientos.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/reporte.jsp</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/nuevoIngresoOk.jsp</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/web/nuevoGasto.jsp</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/src/java/Servlets/reporteIndividualServlet.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/src/java/Servlets/detalleMovimientosServlet.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/VeratConsortium/src/java/Servlets/nuevoGastoServlet.java</file>
         </group>
     </open-files>
 </project-private>

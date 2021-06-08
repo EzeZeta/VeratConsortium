@@ -50,7 +50,8 @@ public class nuevoGastoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int id_consorcio = Integer.parseInt(request.getParameter("txtIdConsorcio"));
+        int id_consorcio = Integer.parseInt(request.getParameter("txtId"));
+        String nombreConsorcio = request.getParameter("txtConsorcio");
         
         String fecha = request.getParameter("fecha");
         
@@ -77,8 +78,13 @@ public class nuevoGastoServlet extends HttpServlet {
         
         gm.agregarGasto(nuevoMovimiento);
         
-//        RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/reporte.jsp");
-//        rd.forward(request, response);
+        request.setAttribute("id_consorcio", id_consorcio);
+        request.setAttribute("nombreConsorcio", nombreConsorcio);
+        
+        
+        
+        RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/detalleMovimientosServlet");
+        rd.forward(request, response);
         
         
         
