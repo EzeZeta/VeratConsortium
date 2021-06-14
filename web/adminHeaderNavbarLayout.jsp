@@ -34,10 +34,22 @@
             <li class="nav-item">
               <a class="nav-link" href="LoginServlet" style="color: grey">Administracion</a>
             </li>
+            
+            
             <li class="nav-item">
-              <a class="nav-link" href="/VeratConsortium/cerrarSesionServlet" style="color: grey" >Cerrar Sesion</a>
+              <a class="nav-link" href=https://forms.gle/hcNm53qNxLRZPzoP8 target="blank" style="color: grey" >Contacto</a>
             </li>
             
+            
+            <li class="nav-item">
+              <a class="nav-link" href="faq.jsp" style="color: grey" >Ayuda</a>
+            </li>  
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/VeratConsortium/cerrarSesionServlet" style="color: grey" ><abbr title="Cerrar Sesion"> <img src="img/off.png" width="20" height="20" ></abbr></a>
+            </li>
+            
+             
         </ul>
           
       </div>

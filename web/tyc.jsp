@@ -19,11 +19,14 @@
         <title>Verat Consortium</title>
 
     </head>
-    <body  style="background-image: url(img/1038.jpg)"> 
+    <body  style="background-image: url(img/fondo.jpg)"> 
 
         <div class="text-md-right" >
             <ul class="nav justify-content-end">
-                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" style="color: grey">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="LoginServlet" style="color: grey">Administracion</a>
                 </li>
@@ -31,43 +34,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login.jsp" style="color: grey" >Login</a>
                 </li>
-                <li class="nav-item">
-              <a class="nav-link" href=https://forms.gle/hcNm53qNxLRZPzoP8 target="blank" style="color: grey" >Contacto</a>
-            </li>
-                
-                
+
             </ul>
         </div>
-
-
-
-        <h1 class="display-4"><img src="img/helmet.png" height="100" width="100"> Verat Consortium</h1>     
-        <div class="container">
-            <h3 >Gestion integral de consorcios</h3>
-
-            <div class="container-md">
-
-                <h3 >
-                    <br>
-                    <small class="text-muted">Animate a desafiar el caos.</small>
-                </h3>
-
-            </div>
-
-
-
-            <div class="container-fluid ">
-                <div class="col-md-4"   >
-
-                    <p style="justify-content: left">
-                        Reinventa tu Administración de Consorcios con la plataforma más 
-                        avanzada para la gestión integral de Edificios y Consorcios.
-                    </p>
-                    <a href="tyc.jsp">Terminos y Condiciones</a>
-                </div>
-                
-            </div>
+        <div class="container-md">
+        <h1 class="display-4"><img src="img/helmet.png" height="100" width="100"> Verat Consortium</h1>    
+            
+            
+            
+        <h1>Terminos y condiciones</h1>
+        
+        
+        
         </div>
+        <div class="container-md">
+            <embed src="img/Terminos y condiciones VERAT CONSORTIUM.pdf" width="800" height="500" >
+        </div>
+        <div class="container container-md">
+        <a class="btn btn-outline-dark"   href="img/Terminos y condiciones VERAT CONSORTIUM.pdf" download>Descargar</a>
+        </div>
+        
         <script src="js/bootstrap.js"></script>
 
 

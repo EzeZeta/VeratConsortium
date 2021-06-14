@@ -92,7 +92,7 @@
 
                             <td style="text-align: center" hidden>${pro.id_consorcio}</td>
                             <td>
-                                <button class="btn btn-outline-dark" onclick="window.location = 'reporteIndividualServlet?id_consorcio=${pro.id_consorcio }';" > ${pro.nombre} <img src="img/condo.png" height="35" width="35"></button>  
+                                <button class="btn btn-outline-dark" onclick="window.location = 'reporteIndividualServlet?id_consorcio=${pro.id_consorcio }';" > ${pro.nombre} <img src="img/condo.png" height="30" width="30"></button>  
                             </td>                            
                         </c:forEach>
                     </table>            

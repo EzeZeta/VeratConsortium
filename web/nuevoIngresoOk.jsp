@@ -78,7 +78,7 @@
                 <input name="id_ph" value="<%= id_ph%>" hidden>
                 <input name="id_consorcio" value="<%= id_consorcio%>" hidden>
 
-                <input name="id_expensa" id="id_expensa1">
+                <input name="id_expensa" id="id_expensa1" hidden>
 
                 <table>           
                     <tr><td>Fecha</td><td><input type="date" name="fecha"></td></tr>

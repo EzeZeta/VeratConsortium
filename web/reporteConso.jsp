@@ -155,7 +155,7 @@
 
             <div class="container-sm " style="float: left">
                 <br><br>
-                <a class=" btn btn-dark" href="vistaAdmin.jsp">Volver</a>
+                <a class=" btn btn-dark" href="reporte.jsp">Volver</a>
                 <button class="btn btn-outline-light" onclick="imprimir()"><img src="img/printer.png" height="35" width="35"></button>
             </div>
 

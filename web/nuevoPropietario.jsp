@@ -38,6 +38,15 @@
                         <tr><td>Telefono</td><td><input type="text" name="txtTelefono"></td></tr>
                         <tr><td>Mail</td><td><input type="email" name="txtMail"></td></tr>
 
+                        <tr><td> Consorcio </td><td>
+                                <select name="cboCons">
+                                    <c:forEach var="cons" items="${conso.listadoConsorcios()}">
+                                        <option value="${cons.id_consorcio}"> ${cons.nombre}
+                                        </c:forEach>
+                                </select>
+                            </td></tr>
+                        
+                        
                         <tr><td> Departamento </td><td>
                                 <select name="cboPh">
                                     <c:forEach var="ph" items="${conso.listadoPh()}">
@@ -46,13 +55,7 @@
                                 </select>
                             </td></tr>   
 
-                        <tr><td> Consorcio </td><td>
-                                <select name="cboCons">
-                                    <c:forEach var="cons" items="${conso.listadoConsorcios()}">
-                                        <option value="${cons.id_consorcio}"> ${cons.nombre}
-                                        </c:forEach>
-                                </select>
-                            </td></tr>  
+                          
 
                     </table>  <br>
                     <input type="submit" value="Agregar" class="btn btn-dark">

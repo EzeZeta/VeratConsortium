@@ -184,7 +184,38 @@ public class GestorBD {
         return lista;
     }
     
-    //Nueva expensa
+    //Listado de PH para armar combo
+//    public ArrayList<Ph> listadoPhFiltro() {
+//        
+//        ArrayList<Ph> lista = new ArrayList<>();
+//        try {
+//            
+//            Connection conn = DriverManager.getConnection(CONN, USER, PASS);
+//            
+//            Statement st = conn.createStatement();
+//            ResultSet rs = st.executeQuery("Select ph.id_ph,ph.descripcion, c.nombre from Ph ph join Consorcios c on ph.id_consorcio = c.id_consorcio  where estado = 1 and ocupado = 0");
+//            
+//            while (rs.next()) {
+//                int id_ph = rs.getInt(1);
+//                String descripcion = rs.getString(2);
+//                String nombreConso = rs.getString(3);
+//                Ph ph = new Ph(id_ph, descripcion, 0, 0,true,false);
+//                
+//                ph.setId_ph(id_ph);
+//                ph.setDescripcion(descripcion);
+//                ph.
+//                
+//                
+//                lista.add(ph);
+//            }
+//            st.close();
+//            conn.close();
+//            
+//        } catch (SQLException ex) {
+//            Logger.getLogger(GestorBD.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        return lista;
+//    }
     
     
     

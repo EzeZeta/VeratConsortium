@@ -21,8 +21,8 @@
                 <form action="nuevoPhServlet" method="POST" >
                     <table>
                         
-                        <tr><td>Nomenclatura</td><td><input type="text" name="txtNomenclatura"></td></tr>
-                        <tr><td>Importe </td><td><input type="number" name="txtImporte"></td></tr>
+                        <tr><td>Nomenclatura PH</td><td><input type="text" name="txtNomenclatura"></td></tr>
+                        <tr><td>Importe expensa</td><td><input type="number" name="txtImporte"></td></tr>
                         <tr><td>Consorcio </td><td><input type="text" name="txtConsorcio" value="<jsp:getProperty name="cons" property="nombreConsorcio"  ></jsp:getProperty >" disabled></td></tr>
                         <input type="text" name="txtId_Cons" value="<jsp:getProperty name="cons" property="id_consorcio"></jsp:getProperty>" hidden>       
                         
