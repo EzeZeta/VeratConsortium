@@ -9,7 +9,7 @@
         <title>Verat Consortium</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css"/>
         <link rel="stylesheet" href="css/bootstrap-reboot.css" type="text/css">
@@ -39,31 +39,53 @@
                         <tr><td>Mail</td><td><input type="email" name="txtMail"></td></tr>
 
                         <tr><td> Consorcio </td><td>
-                                <select name="cboCons">
-                                    <c:forEach var="cons" items="${conso.listadoConsorcios()}">
+                                <select name="cboCons" id="cons" onchange="obtenerIdCons()">
+                                    <option value="default"> Elegi tu consorcio 
+                                        <c:forEach var="cons" items="${conso.listadoConsorcios()}">
                                         <option value="${cons.id_consorcio}"> ${cons.nombre}
                                         </c:forEach>
                                 </select>
                             </td></tr>
-                        
-                        
-                        <tr><td> Departamento </td><td>
-                                <select name="cboPh">
-                                    <c:forEach var="ph" items="${conso.listadoPh()}">
-                                        <option value="${ph.id_ph}"> ${ph.descripcion}
-                                        </c:forEach>
-                                </select>
-                            </td></tr>   
 
-                          
+
+                        <tr><td> Departamento </td><td>
+                                <select name="cboPh" id="ph" >
+
+                                </select>
+                            </td></tr>  
+
+
 
                     </table>  <br>
                     <input type="submit" value="Agregar" class="btn btn-dark">
                     <td><a class="btn btn-dark"  href="listaPropietariosServlet">Cancelar</a>
-                    
+
                 </form>
             </div>
         </div>
+
+        <script>
+            function obtenerIdCons() {
+                let phSelect = document.getElementById("ph");
+
+                let idConso = document.getElementById("cons").value;
+
+                phSelect.innerHTML = "";
+            <c:forEach var="ph" items="${conso.listadoPh()}">
+
+                if (${ph.id_consorcio} === +idConso) {
+                    let option = document.createElement("option");
+
+                    option.innerHTML = "${ph.descripcion}";
+                    option.value = "${ph.id_ph}";
+
+                    document.getElementById("ph").appendChild(option);
+                }
+            </c:forEach>
+            }
+        </script>
+
+
 
     </body>
     <footer>

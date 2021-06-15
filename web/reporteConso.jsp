@@ -63,11 +63,26 @@
                         </tr>
                     </table>
                 </form>
+            
+            </div>
+                            
+                            <div class="container-fluid " style="float: left">
+                
+                <a class=" btn btn-dark" href="reporte.jsp">Volver</a>
+                <button class="btn btn-outline-light" onclick="imprimir()"><img src="img/printer.png" height="35" width="35"></button>
             </div>
         </div>
+                            
+                            
 
-        <div class="container-fluid">
-            <div class="container col-6" style = "float: left">
+        <div class=" container container-fluid">
+            <div class="container-md">
+                                <c:choose>
+                <c:when test="${fechaDesde != null}"><p class="container-fluid">Datos filtrados por fecha desde: ${fechaDesde} hasta: ${fechaHasta}</> </c:when>
+                <c:otherwise></c:otherwise>
+            </c:choose> 
+                            </div>
+            <div class="container col-12">
                 <h2 class="container-md ">Indicadores</h2>
                 <table > 
                     <tr>
@@ -79,15 +94,12 @@
 
             
 
-            <c:choose>
-                <c:when test="${fechaDesde != null}"><p class="container-md">Datos filtrados por fecha desde: ${fechaDesde} hasta: ${fechaHasta}</p> </c:when>
-                <c:otherwise></c:otherwise>
-            </c:choose> 
+            
 
 
 
 
-            <div class="container col-6 " style="float: left">     
+            <div class="container container-fluid " >     
                 <h2 class="container-md ">Detalle movimientos</h2>
                 <table class="table table-striped" id="tabla" style="text-align: center">
                     <thead>
@@ -126,7 +138,7 @@
                 </table>
             </div>
 
-            <div class="container col-6" style="float: right"> 
+            <div class="container container-fluid" > 
                 <h2 class="container-md ">Top 5 Inquilinos morosos</h2>
                 <table class="table table-striped">
                     <tr>
@@ -153,11 +165,7 @@
 
 
 
-            <div class="container-sm " style="float: left">
-                <br><br>
-                <a class=" btn btn-dark" href="reporte.jsp">Volver</a>
-                <button class="btn btn-outline-light" onclick="imprimir()"><img src="img/printer.png" height="35" width="35"></button>
-            </div>
+            
 
 
 
@@ -199,49 +207,49 @@
             if (value !== '') {
                 tableBody.querySelectorAll('tr td').forEach(row => {
                     var text = row.textContent;
-        <!--var html = text.replace(new RegExp(value, 'g'),`<strong>${value}</strong>`);-->
+<!--var html = text.replace(new RegExp(value, 'g'),`<strong>${value}</strong>`);-->
                 row.innerHTML = html;
             });
 
         }
-    }    );
+    });
 
 </script>
 <script>
-        var ctx = document.getElementById("movimientos").getContext("2d");
-        var myChart = new Chart(ctx, {
-            type: "doughnut",
-            data: {
+    var ctx = document.getElementById("movimientos").getContext("2d");
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
             labels: ['Gastos:$' +${gasto}, 'Ingresos:$' +${ingresos}],
-                datasets: [{
+            datasets: [{
                     data: [${gasto},${ingresos}],
-                        backgroundColor: ['rgb(241, 148, 138)', 'rgb(133, 193, 233 )']
-                    }]
-            },
-            options: {
-                responsive: false,
-                maintainAspectRatio: true
-            }
-        });
+                    backgroundColor: ['rgb(241, 148, 138)', 'rgb(133, 193, 233 )']
+                }]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: true
+        }
+    });
         </script>
 
 
         <script>
-        var ctx = document.getElementById("cantidad").getContext("2d");
+            var ctx = document.getElementById("cantidad").getContext("2d");
             var myChart = new Chart(ctx, {
-            type: "doughnut",
-            data: {
-                labels: ['Adeudadas:' +${deuda}, 'Cobradas:' +${pagada}],
-                datasets: [{
-                        data: [${deuda},${pagada}],
-                        backgroundColor: ['rgb(241, 148, 138)', 'rgb(133, 193, 233 )']
-                    }]
-            },
-            options: {
-                responsive: false,
-                maintainAspectRatio: true
-            }
-        });
+                type: "doughnut",
+                data: {
+                    labels: ['Adeudadas:' +${deuda}, 'Cobradas:' +${pagada}],
+                    datasets: [{
+                            data: [${deuda},${pagada}],
+                            backgroundColor: ['rgb(241, 148, 138)', 'rgb(133, 193, 233 )']
+                        }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: true
+                }
+            });
     </script>
 
     <script>
@@ -260,12 +268,12 @@
     </script>
 
     <script>
-            //Imprimir pantalla
-            function imprimir() {
-                window.print('');
-            }
+        //Imprimir pantalla
+        function imprimir() {
+            window.print('');
+        }
 
-            
+
         </script>
 
 

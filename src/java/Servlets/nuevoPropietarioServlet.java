@@ -6,6 +6,7 @@
 package Servlets;
 
 
+import Gestores.GestorConsorcios;
 import Gestores.GestorPropietarios;
 import Modelos.Consorcio;
 import Modelos.Persona;
@@ -57,6 +58,8 @@ public class nuevoPropietarioServlet extends HttpServlet {
 
         GestorPropietarios gp = new GestorPropietarios();
         gp.agregarPropietario(nuevaPersona);
+        GestorConsorcios gc = new GestorConsorcios();
+        gc.ocuparPh(id_Ph);
 
         RequestDispatcher rc = request.getServletContext().getRequestDispatcher("/listaPropietariosServlet");
         rc.forward(request, response);

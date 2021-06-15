@@ -147,6 +147,32 @@ public class GestorConsorcios {
         }
 
     }
+    
+    
+     // Cambiar estado PH
+    public void ocuparPh(int id_ph) {
+
+        try {
+
+            Connection conn = DriverManager.getConnection(CONN, USER, PASS);
+            PreparedStatement st = conn.prepareStatement("UPDATE Ph set ocupado = 1 where id_ph = ?");
+            st.setInt(1, id_ph);
+            st.executeUpdate();
+            st.close();
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(GestorConsorcios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 
     //Obtener consorcio para nuevo PH
     public dtoObtenerConsorcio obtenerConsorcio(int id_consorcio) {
