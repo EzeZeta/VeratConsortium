@@ -20,6 +20,18 @@
         <title >Verat Consortium</title>
     </head>
     <body >
+        
+        <%!           
+                String id_consorcio;
+                
+                %>
+                <%
+                
+                id_consorcio = request.getParameter("id_consorcio");
+                %>
+                
+                
+        
         <h1 class="container-md">Expensas </h1><br>
         <div class="container-md">     
             <table class="table table-striped">
@@ -48,7 +60,11 @@
 
 
         <div class="container-md">
-            <a class=" btn btn-dark" onclick="atras()">Volver</a>
+            
+            
+            <button class="btn btn-dark" onclick="window.location = 'nuevaExpensaServlet2?id_consorcio=<%=id_consorcio%>';">Volver</button>
+            
+            
         </div>
 
         <div>

@@ -94,7 +94,7 @@
       <button class="btn btn-outline-light" onclick="imprimir()"><img src="img/printer.png" height="35" width="35"></button>
       
       
-      <button class="btn btn-outline-dark" onclick="window.location = 'listaExpensaServlet?id_ph=${impre.id_ph}';">Volver</button>  
+      <button class="btn btn-outline-dark" onclick="window.location = 'listaExpensaServlet?id_ph=${impre.id_ph}&id_consorcio=${impre.id_consorcio}';">Volver</button>  
                         
         </div>
   </body>

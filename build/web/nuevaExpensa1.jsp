@@ -43,7 +43,7 @@
 
 
         <div class="container-md">
-            <a class=" btn btn-dark" onclick=" atras()">Volver</a>
+            <a class=" btn btn-dark" href="vistaAdmin.jsp">Volver</a>
         </div>
 
         <div>

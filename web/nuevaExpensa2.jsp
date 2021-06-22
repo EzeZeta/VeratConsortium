@@ -20,6 +20,18 @@
         <title >Verat Consortium</title>
     </head>
     <body >
+        
+        
+        <%!           
+                int id_consorcio;
+                
+                %>
+                <%
+                
+                id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
+                %>
+        
+        
         <h1 class="container-md">Elegi el Ph a liquidar</h1><br>
         <div class="container-md"> 
 
@@ -36,7 +48,7 @@
                             <button class="btn btn-outline-dark" onclick="window.location = 'nuevaExpensaServlet3?id_ph=${pro.id_ph}';" ><img src="img/bill.png" height="35" width="35"></button>  
                         </td>
                         <td>
-                            <button class="btn btn-outline-dark" onclick="window.location = 'listaExpensaServlet?id_ph=${pro.id_ph}';" ><img src="img/clipboard.png" height="35" width="35"></button>  
+                            <button class="btn btn-outline-dark" onclick="window.location = 'listaExpensaServlet?id_ph=${pro.id_ph}&id_consorcio=<%=id_consorcio%>';" ><img src="img/clipboard.png" height="35" width="35"></button>  
                         </td>
 
                     </tr>
@@ -48,6 +60,8 @@
 
 
         <div class="container-md">
+            
+            
             <a class=" btn btn-dark" href="nuevaExpensaServlet1">Volver</a>
         </div>
 

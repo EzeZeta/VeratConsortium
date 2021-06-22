@@ -124,7 +124,7 @@ public class GestorExpensas {
 
             Connection conn = DriverManager.getConnection(CONN, USER, PASS);
 
-            PreparedStatement st = conn.prepareStatement("select e.id_expensa, ph.descripcion, c.nombreConsorcio, c.direccionConsorcio, p.nombre +' '+ p.apellido as nombrePropietario,\n"
+            PreparedStatement st = conn.prepareStatement("select e.id_expensa, ph.descripcion, c.nombreConsorcio,c.id_consorcio , c.direccionConsorcio, p.nombre +' '+ p.apellido as nombrePropietario,\n"
                     + "e.fecha, e.vencimiento, e.importe, ph.id_ph, c.cuit\n"
                     + "from Personas p join Ph ph on p.id_ph = ph.id_ph join Expensas e on ph.id_ph = e.id_ph join Consorcios c on c.id_consorcio = ph.id_consorcio join \n"
                     + "TiposPersonas tp on tp.id_tipoPersona = p.id_tipoPersona\n"
@@ -139,15 +139,16 @@ public class GestorExpensas {
                 int id_expensa1 = rs.getInt(1);
                 String descripcion = rs.getString(2);
                 String nombreConsorcio = rs.getString(3);
-                String direccionConsorcio = rs.getString(4);
-                String nombrePropietario = rs.getString(5);
-                Date fecha = rs.getDate(6);
-                Date vencimiento = rs.getDate(7);
-                double importeExp = rs.getDouble(8);
-                int id_ph = rs.getInt(9);
-                String cuit = rs.getString(10);
+                int id_consorcio = rs.getInt(4);
+                String direccionConsorcio = rs.getString(5);
+                String nombrePropietario = rs.getString(6);
+                Date fecha = rs.getDate(7);
+                Date vencimiento = rs.getDate(8);
+                double importeExp = rs.getDouble(9);
+                int id_ph = rs.getInt(10);
+                String cuit = rs.getString(11);
 
-                impresion = new dtoDatosImpresionExpensa(id_expensa1, descripcion, nombreConsorcio, direccionConsorcio, nombrePropietario, fecha, vencimiento, importeExp, id_ph, cuit);
+                impresion = new dtoDatosImpresionExpensa(id_expensa1, descripcion, nombreConsorcio,id_consorcio ,direccionConsorcio, nombrePropietario, fecha, vencimiento, importeExp, id_ph, cuit);
 
             }
             st.close();

@@ -33,10 +33,10 @@
                 id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
                 %>
                 
-                <h4> <%= nombreConsorcio %></h4>
-                <button class="btn btn-outline-dark" onclick="window.location = 'listaDptosIngresosServlet?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Nuevo Ingreso</button>
-                <button class="btn btn-outline-dark" onclick="window.location = 'nuevoGasto.jsp?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Nuevo Gasto</button>
-                <button class="btn btn-outline-dark" onclick="window.location = 'detalleMovimientosServlet?id_consorcio=<%= id_consorcio %>&nombreConsorcio=<%=nombreConsorcio%>';" >Detalle Movimientos</button>
+                <h4> <%=nombreConsorcio %></h4>
+                <button class="btn btn-outline-dark" onclick="window.location = 'listaDptosIngresosServlet?id_consorcio=<%=id_consorcio%>&nombreConsorcio=<%=nombreConsorcio%>';" >Nuevo Ingreso</button>
+                <button class="btn btn-outline-dark" onclick="window.location = 'nuevoGasto.jsp?id_consorcio=<%=id_consorcio%>&nombreConsorcio=<%=nombreConsorcio%>';" >Nuevo Gasto</button>
+                <button class="btn btn-outline-dark" onclick="window.location = 'detalleMovimientosServlet?id_consorcio=<%=id_consorcio%>&nombreConsorcio=<%=nombreConsorcio%>';" >Detalle Movimientos</button>
                 
 
                 

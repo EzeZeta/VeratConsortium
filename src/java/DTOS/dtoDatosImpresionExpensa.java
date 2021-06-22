@@ -16,6 +16,7 @@ public class dtoDatosImpresionExpensa {
     private int id_expensa;
     private String descripcion;
     private String nombreConsorcio;
+    private int id_consorcio;
     private String direccionConsorcio;
     private String nombrePropietario;
     private Date fecha;
@@ -24,10 +25,11 @@ public class dtoDatosImpresionExpensa {
     private int id_ph;
     private String cuit;
 
-    public dtoDatosImpresionExpensa(int id_expensa, String descripcion, String nombreConsorcio, String direccionConsorcio, String nombrePropietario, Date fecha, Date vencimiento, double importe, int id_ph, String cuit) {
+    public dtoDatosImpresionExpensa(int id_expensa, String descripcion, String nombreConsorcio, int id_consorcio, String direccionConsorcio, String nombrePropietario, Date fecha, Date vencimiento, double importe, int id_ph, String cuit) {
         this.id_expensa = id_expensa;
         this.descripcion = descripcion;
         this.nombreConsorcio = nombreConsorcio;
+        this.id_consorcio = id_consorcio;
         this.direccionConsorcio = direccionConsorcio;
         this.nombrePropietario = nombrePropietario;
         this.fecha = fecha;
@@ -59,6 +61,14 @@ public class dtoDatosImpresionExpensa {
 
     public void setNombreConsorcio(String nombreConsorcio) {
         this.nombreConsorcio = nombreConsorcio;
+    }
+
+    public int getId_consorcio() {
+        return id_consorcio;
+    }
+
+    public void setId_consorcio(int id_consorcio) {
+        this.id_consorcio = id_consorcio;
     }
 
     public String getDireccionConsorcio() {
@@ -116,6 +126,8 @@ public class dtoDatosImpresionExpensa {
     public void setCuit(String cuit) {
         this.cuit = cuit;
     }
+
+    
     
     
 

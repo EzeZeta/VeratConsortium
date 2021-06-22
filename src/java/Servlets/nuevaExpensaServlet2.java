@@ -36,6 +36,7 @@ public class nuevaExpensaServlet2 extends HttpServlet {
         ArrayList<Ph> lista = gestor.listadoPhCompleto(id_consorcio);
 
         request.setAttribute("lista", lista);
+        request.setAttribute("id_consorcio", id_consorcio);
 
         RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/nuevaExpensa2.jsp");
         rd.forward(request, response);

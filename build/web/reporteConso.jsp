@@ -141,7 +141,7 @@
             <div class="container container-fluid" > 
                 <h2 class="container-md ">Top 5 Inquilinos morosos</h2>
                 <table class="table table-striped">
-                    <tr>
+                    <tr style="text-align: center">
                         <th>Consorcio</th>
                         <th>Ph</th>
                         <th>Propietario</th>
@@ -151,11 +151,11 @@
                     <c:forEach var="pro" items="${lista}" > 
                         <tr style="text-align: center">
 
-                            <td style="text-align: left">${pro.nombreConsorcio}</td>
+                            <td style="text-align: center">${pro.nombreConsorcio}</td>
                             <td>${pro.descripcion}</td>
-                            <td style="text-align: left">${pro.propietario}</td>
+                            <td style="text-align: center">${pro.propietario}</td>
                             <td>${pro.cantidadExp}</td>
-                            <td style="text-align: right">AR$ ${pro.importeAdeudado}</td>
+                            <td style="text-align: center">AR$ ${pro.importeAdeudado}</td>
                         </tr>
                     </c:forEach>
                 </table>            

@@ -10,6 +10,8 @@ import Modelos.Expensa;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,12 +31,15 @@ public class listaExpensaServlet extends HttpServlet {
             throws ServletException, IOException {
         
         int id_ph = Integer.parseInt(request.getParameter("id_ph"));
+        int id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
         
         GestorExpensas ge = new GestorExpensas();
         ArrayList<Expensa> lista = ge.listadoExpensas(id_ph);
         request.setAttribute("lista", lista);
         
         request.setAttribute("ph",id_ph);
+        request.setAttribute("id_consorcio", id_consorcio );
+        
         
         RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/expensas.jsp");
         rd.forward(request, response);

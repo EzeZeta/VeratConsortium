@@ -42,12 +42,12 @@
 
                 <table class="table" >
 
-                    <tr><th>Importe</th><th>Fecha</th><th>Vencimiento</th><th>Recargo</th><th>Expensa</th></tr>
+                    <tr><th>Importe</th><th>Fecha</th><th>Vencimiento</th><th>Recargo</th><th hidden >Expensa</th></tr>
                             <c:forEach var="lista" items="${lista}" >
                         <tr><td><input type="checkbox" class="check" name="cbxExpensas" id="cbxId" value="${lista.importeExpensa} ${lista.id_expensa}"> AR$${lista.importeExpensa}</td>
                             <td>${lista.fecha}</td><td>${lista.vencimiento}</td>
                             <td><input type="checkbox" class="check" name="cbxRecargo" id="idRecargo" value="300" > AR$300</td>
-                            <td><input name="txtId" id="id_expensa" value="${lista.id_expensa}" disabled></td></tr>
+                            <td><input name="txtId" id="id_expensa" value="${lista.id_expensa}" disabled hidden></td></tr>
                             </c:forEach>
                 </table>
 

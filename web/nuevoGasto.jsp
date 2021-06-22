@@ -17,22 +17,22 @@
         <jsp:include page="/adminHeaderNavbarLayout.jsp"/>
     </head>
     <body>
+        <%!
+            int id_consorcio;
+            String nombreConsorcio;
+                                                                                                                                                                                                                %>
+        <%
+            id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
+            nombreConsorcio = request.getParameter("nombreConsorcio");
+
+        %>
 
         <div class="container-md" >
             <h1>Nuevo Gasto</h1>
             <div>
                 <form action="nuevoGastoServlet" method="POST" >
                     <table>
-                        <%!
-                            int id_consorcio;
-                            String nombreConsorcio;
-                                                                                                                                %>
-                        <%
-                            nombreConsorcio = request.getParameter("nombreConsorcio");
-                            id_consorcio = Integer.parseInt(request.getParameter("id_consorcio"));
-                        %>
-
-                        <tr><td>Consorcio </td><td><input type="text" name="txtConsorcio" value="<%=nombreConsorcio%>" disabled>
+                        <tr><td>Consorcio </td><td><input type="text" name="txtConsorcio" value="<%=nombreConsorcio%>" disabled >
                             </td><input type="text" name="txtId" value="<%=id_consorcio%>" hidden ></td></tr>
                         <tr><td>Fecha</td><td><input type="date" name="fecha"></td></tr>
                         <tr><td> Tipo Gasto</td><td>
@@ -45,24 +45,23 @@
                         <tr><td>Importe</td><td><input type="number" name="txtImporte"></td></tr>
                         <tr><td>Detalle</td><td><textarea  name="txtDetalle"></textarea></td>
                     </table>
-                    <input type="submit" value="Cargar" class="btn btn-dark">
-                    
-                           
+                    <input type="submit" value="Cargar" class="btn btn-dark">                  
+                    <input class="btn btn-dark" type="button" value="Cancelar" name="Boton1" onclick="atras();">
                 </form>
-                        
-
+                
             </div>
-            <button class="btn btn-dark" onclick=" atras()">Cancelar</button>
         </div>
                         
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
+
+
+
+
+
         <script language="javascript">
             function atras() {
                 history.back();
