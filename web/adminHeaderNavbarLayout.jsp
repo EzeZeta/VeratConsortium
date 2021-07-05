@@ -46,7 +46,7 @@
             </li>  
             
             <li class="nav-item">
-                <a class="nav-link" href="/VeratConsortium/cerrarSesionServlet" style="color: grey" ><abbr title="Cerrar Sesion"> <img src="img/off.png" width="20" height="20" ></abbr></a>
+                <a class="nav-link" href="/VeratConsortium/cerrarSesionServlet" style="color: grey" data-toggle="tooltip" title="Cerrar Sesion" > <img src="img/off.png" width="20" height="20" ></a>
             </li>
             
              

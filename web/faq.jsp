@@ -132,7 +132,8 @@
                 text: 'Consorcios > Nuevo Consorcio > Agregar',
                 imageUrl: 'img/nuevoConso.gif',
                 imageHeight: 400,
-                width: '900px'
+                width: '900px',
+                heigth: '800px'
             });
         }
         
@@ -160,7 +161,27 @@
             });
         }
         
+        function nuevoIngreso() {
+
+            Swal.fire({
+                titleText: 'Nuevo Ingreso',
+                text: 'Caja > Elegir Consorcio > Nuevo Ingreso >Elegir Ph > Completar Formulario > Cargar ',
+                imageUrl: 'img/nuevoIngreso.gif',
+                imageHeight: 400,
+                width: '900px'
+            });
+        }
         
+        function nuevoGasto() {
+
+            Swal.fire({
+                titleText: 'Nuevo Ingreso',
+                text: 'Caja > Elegir Consorcio > Nuevo Gasto > Completar Formulario > Cargar ',
+                imageUrl: 'img/nuevoGasto.gif',
+                imageHeight: 400,
+                width: '900px'
+            });
+        }
         
         
         
